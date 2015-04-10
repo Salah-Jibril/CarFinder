@@ -1,0 +1,49 @@
+﻿<div class="single-widget-container" ng-controller="loginController">
+    <section class="intro widget login-widget" style="margin-top:50px">
+        <div class=" well col-md-5" style="margin-left:350px; margin-right:350px; width:400px; margin-top:25px; background-color:rgba(125, 111, 111, 0.27)">
+            <h4>{{message}}</h4>
+            <form class="form-login no-margin" role="form">
+                <fieldset>
+                    <div class="form-group no-margin">
+                        <label for="username">Username</label>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            <input id="username" type="text" data-ng-model="loginData.userName" class="form-control input-lg"
+                                   placeholder="Username">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                            <input id="password" type="password" data-ng-model="loginData.password" class="form-control input-lg"
+                                   placeholder="Password">
+                        </div>
+
+                    </div>
+                </fieldset>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-block btn-lg btn-danger" data-ng-click="login()">
+                        <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                        <small>Sign In</small>
+                    </button>
+                    <div class="forgot"><a class="forgot" href="#/register">Register a new account</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+        <div class="text-center well" style="margin-top:10px;margin-bottom: 0;background-color:rgba(189, 34, 34, 0.28); color:#E9153C; border:0">
+            <p style="padding-bottom:0; margin-bottom: 0">{{description}}</p>
+            <p style="padding:0; margin: 0">{{maker}}</p>
+        </div>
+</div>
+
+

@@ -1,0 +1,56 @@
+﻿
+<div class="jumbotron text-center" style="background-color: black">
+    <h2>Choose Parameters for your search</h2>
+    <div class="col-sm-3 well">
+        <label style="color:black">Make</label>
+        <select ng-model="selectedMake" ng-options="make for make in makes" ng-change="getModels(); getCarsM(); hide()" class="form-control"></select>
+    </div>
+    <div class="col-sm-3 well">
+        <label style="color:black">Model</label>
+        <select ng-model="selectedModel" ng-options="model for model in models" ng-change="getYears(); getCarsMM()" ng-disabled="selectedMake==''" class="form-control"></select>
+    </div>
+    <div class="col-sm-3 well">
+        <label style="color:black">Year</label>
+        <select ng-model="selectedYear" ng-options="year for year in years" ng-change="getTrims(); getPicture(); getCarsMMY()" ng-disabled="selectedModel==''" class="form-control"></select>
+    </div>
+    <div class="col-sm-3 well">
+        <label style="color:black">Trim</label>
+        <select ng-model="selectedTrim" ng-options="trim for trim in trims" ng-change="getCarsMMYT()" ng-disabled="selectedYear==''" class="form-control"></select>
+    </div>
+</div>
+<div class="text-center well" style="margin-top:10px;margin-bottom: 0;background-color:rgba(189, 34, 34, 0.28); color:#E9153C; border:0" ng-show="showmessage">
+    <hr style="width:100%" />
+    <p>Make a selection in the choices above to search for the car you are looking for!!</p>
+</div>
+<!--<div ng-show="ShowPicture()">
+    <div class="col-md-3">
+        <img ng-src="https://media.ed.edmunds-media.com{{pictureStyleUrls[0]}}" style=" width:100%" />
+    </div>
+</div>-->
+<div ng-repeat="car in cars" style="background-color: transparent">
+    <hr style="width:100%" />
+    <div class="col-md-3">
+        <p style="font-size: 12px;">Make: {{car.Make}}</p>
+        <p style="font-size: 12px;">Model: {{car.Model}}</p>
+        <p style="font-size: 12px;">Year: {{car.Year}}</p>
+        <p style="font-size: 12px;">Trim: {{car.Trim}}</p>
+        <p style="font-size: 12px;">Fuel Type: {{car.EngineFuel}}</p>
+    </div>
+    <div class="col-md-3">
+        <p style="font-size: 12px;">Engine: {{car.EngineType}}</p>
+        <p style="font-size: 12px;">Engine Power RPM: {{car.EnginePowerRPM}}</p>
+        <p style="font-size: 12px;">Engine Torque RPM: {{car.EngineTorqueRPM}}</p>
+        <p style="font-size: 12px;">Engine Cylinder: {{car.EngineCylinder}}</p>
+        <p style="font-size: 12px;">Engine Position: {{car.EnginePosition}}</p>
+    </div>
+    <div class="col-md-3">
+        <p style="font-size: 12px;">Car Style: {{car.BodyType}}</p>
+        <p style="font-size: 12px;">Transmission: {{car.Transmission}}</p>
+        <p style="font-size: 12px;">Seats: {{car.Seats}}</p>
+        <p style="font-size: 12px;">Weight: {{car.Weight}}</p>
+        <p style="font-size: 12px;">Height: {{car.Height}}</p>
+    </div>
+    <div class="col-md-3">
+        <google-image search-term="{{car.Make + ' ' + car.Model + ' ' + car.Year }}" style="width:100%" />
+    </div>
+</div>

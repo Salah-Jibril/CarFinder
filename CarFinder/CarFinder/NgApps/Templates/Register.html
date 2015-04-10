@@ -1,0 +1,49 @@
+﻿<div class="single-widget-container" ng-controller="registerController">
+    <section class="intro widget login-widget">
+        <div class=" well col-md-5" style="margin-left:350px; margin-right:350px; width:400px; margin-top:75px; background-color:rgba(125, 111, 111, 0.27)">
+            <h4>{{message}}</h4>
+            <div class="body">
+                <form class="form-login no-margin" role="form" name="registerForm">
+                    <fieldset>
+
+                        <div class="form-group no-margin">
+                            <label>Name</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-hand-o-down"></i>
+                                </span>
+                                <input id="name" name="name" type="text" required data-ng-model="registerData.Name" class="form-control input-lg"
+                                       placeholder="Name">
+                            </div>
+                            <span ng-show="registerForm.name.$error.required">
+                                Your name is required
+                            </span>
+                            <label for="password">Email</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <input id="email" name="email" type="email" required data-ng-model="registerData.Email" class="form-control input-lg"
+                                       placeholder="Email">
+                            </div>
+                            <span ng-show="registerForm.email.$error.required">
+                                Email is required, and must be a valid email address
+                            </span>
+
+                        </div>
+
+                        <div password-verify data-ng-model="registerdata.confirmpassword" form-name="registerForm"></div>
+                    </fieldset>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-block btn-lg btn-danger" data-ng-click="register()" data-ng-disabled="registerForm.$invalid">
+                            <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                            <small>Register</small>
+                        </button>
+                        <div class="forgot"><a class="forgot" href="#/login">Back to login</a></div>
+                    </div>
+                </form>
+            </div>
+            </div>
+</section>
+</div>
+
